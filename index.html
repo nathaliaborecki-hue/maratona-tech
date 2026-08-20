@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#Desconfie | Deepfake e Saúde Pública</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navegação -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-halved"></i>
+                <h1>#Desconfie<span>AntesDeCompartilhar</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#desafios">O Problema</a></li>
+                    <li><a href="#solucoes">Impactos na Saúde</a></li>
+                    <li><a href="#tecnologia">A Tecnologia</a></li>
+                    <li><a href="#dados">Dados</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Deepfakes podem prejudicar sua saúde?</h2>
+                <p>Vídeos falsos criados por inteligência artificial estão espalhando desinformação sobre medicamentos, vacinas e tratamentos. Entenda como isso afeta milhões de brasileiros.</p>
+                <a href="#desafios" class="btn">Entenda o perigo <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Problema -->
+    <section id="desafios" class="desafios">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que é um Deepfake?</h2>
+                <p>A tecnologia que está redefinindo o conceito de "verdade" no mundo digital</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>O que é?</h3>
+                    <p>Técnica de inteligência artificial que cria vídeos, áudios ou imagens hiper-realistas de pessoas fazendo ou dizendo coisas que nunca aconteceram.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Como funciona?</h3>
+                    <p>Utiliza Redes Adversárias Generativas (GANs): duas IAs competem entre si — uma cria, a outra tenta detectar — até que a falsificação seja quase perfeita.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>O perigo para a saúde</h3>
+                    <p>Quando um deepfake mostra um médico ou autoridade promovendo um "tratamento milagroso", pessoas podem abandonar remédios ou tomar decisões fatais.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-heart-circle-exclamation"></i>
+                    <h3>Impacto psicológico</h3>
+                    <p>Vítimas de deepfakes pornográficos sofrem com ansiedade, depressão e traumas. Em 2026, 98% das vítimas desse tipo de crime no Brasil são mulheres.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impactos na Saúde -->
+    <section id="solucoes" class="solucoes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Impactos na Saúde Pública</h2>
+                <p>Quando a desinformação vira questão de vida ou morte</p>
+            </div>
+            <div class="solucoes-grid">
+                <div class="solucao-item">
+                    <div class="solucao-icon"><i class="fas fa-syringe"></i></div>
+                    <h3>Queda na Vacinação</h3>
+                    <p>Deepfakes de autoridades negando eficácia de vacinas contribuíram para a queda na cobertura vacinal no Brasil em 2025-2026, colocando doenças erradicadas de volta no mapa.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="solucao-icon"><i class="fas fa-pills"></i></div>
+                    <h3>Automedicação Perigosa</h3>
+                    <p>Vídeos falsos promovendo "cura milagrosa" para doenças graves levaram milhares a abandonar tratamentos comprovados cientificamente.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="solucao-icon"><i class="fas fa-head-side-virus"></i></div>
+                    <h3>Ansiedade Coletiva</h3>
+                    <p>Desinformação em massa gera pânico moral, estresse e adoecimento mental na população, sobrecarregando o sistema de saúde.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="solucao-icon"><i class="fas fa-user-injured"></i></div>
+                    <h3>Vítimas Invisíveis</h3>
+                    <p>Pessoas que têm suas imagens usadas em deepfakes pornográficos sofrem traumas profundos. Uma professora na BA disse: <em>"Na hora que eu vi, faltou ar, faltou chão."</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologia -->
+    <section id="tecnologia" class="tecnologia">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Ciência por Trás do Engano</h2>
+                <p>Como a tecnologia é usada para criar e espalhar desinformação</p>
+            </div>
+            <div class="tecnologia-grid">
+                <div class="tecnologia-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>Redes Neurais (GANs)</h4>
+                    <p>Duas IAs competem: a Geradora cria imagens falsas; a Discriminadora tenta detectá-las. Com o tempo, o resultado é praticamente indistinguível do real.</p>
+                </div>
+                <div class="tecnologia-card">
+                    <i class="fas fa-chart-simple"></i>
+                    <h4>O Algoritmo e o Engajamento</h4>
+                    <p>Plataformas priorizam conteúdos que geram raiva, medo ou surpresa. Deepfakes têm alta taxa de clique, então os algoritmos os impulsionam viralmente.</p>
+                </div>
+                <div class="tecnologia-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Rastro Digital</h4>
+                    <p>Curtidas, compartilhamentos e comentários formam seu rastro digital. Hackers e golpistas usam esses dados para criar deepfakes personalizados e direcionar ataques.</p>
+                </div>
+                <div class="tecnologia-card">
+                    <i class="fas fa-file-shield"></i>
+                    <h4>Casos Reais no Brasil</h4>
+                    <p>Cantores usados para vender remédios falsos; Flávio Bolsonaro em vídeos de IA; Raquel Lyra teve deepfake pedindo doações; professora vítima de pornografia falsa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dados / Indicadores -->
+    <section id="dados" class="dados">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dados Alarmantes</h2>
+                <p>Números que mostram a dimensão do problema no Brasil</p>
+            </div>
+            <div class="indicadores">
+                <div class="indicador">
+                    <div class="numero" data-valor="98">0</div>
+                    <p>% das vítimas de deepfakes sexuais no Brasil são mulheres (Polícia Civil, 2026)</p>
+                </div>
+                <div class="indicador">
+                    <div class="numero" data-valor="27000">0</div>
+                    <p>Visualizações de um único deepfake pornográfico de uma professora na BA</p>
+                </div>
+                <div class="indicador">
+                    <div class="numero" data-valor="40">0</div>
+                    <p>% da população já viu um deepfake sem saber que era falso (DataSenado, 2026)</p>
+                </div>
+                <div class="indicador">
+                    <div class="numero" data-valor="50">0</div>
+                    <p>Pessoas denunciaram deepfakes sexuais só em Feira de Santana (BA) em 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interativo -->
+    <section id="quiz" class="quiz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quiz: Você sabe identificar um deepfake?</h2>
+                <p>Teste seus conhecimentos sobre desinformação e saúde digital</p>
+            </div>
+            <div class="quiz-container">
+                <div class="quiz-pergunta" id="pergunta"></div>
+                <div class="quiz-opcoes" id="opcoes"></div>
+                <div class="quiz-feedback" id="feedback"></div>
+                <button id="proximoBtn" class="btn-quiz" style="display:none;">Próxima →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>#DesconfieAntesDeCompartilhar</h3>
+                    <p>Projeto N3 - Maratona Tech 2026 | Ciências Exatas e da Natureza</p>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">Tema: Dilemas digitais — como agir com responsabilidade no mundo conectado?</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Referências</h4>
+                    <ul>
+                        <li><a href="#">Ministério da Saúde</a></li>
+                        <li><a href="#">Polícia Federal - Deepfakes</a></li>
+                        <li><a href="#">Agência Lupa (Fact-checking)</a></li>
+                        <li><a href="#">Projeto Comprova</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 #DesconfieAntesDeCompartilhar - Trabalho acadêmico - MTech Fase 1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
