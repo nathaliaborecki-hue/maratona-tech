@@ -1,196 +1,747 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#DesconfieTech | Tecnologia e Algoritmos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>#Desconfie | Deepfake e Saúde Pública</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            background: linear-gradient(135deg, #0a0e17 0%, #1a1a2e 50%, #16213e 100%);
-            font-family: 'Segoe UI', 'Roboto', sans-serif;
-            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            min-height: 100vh;
+            color: #2c3e2f;
+            scroll-behavior: smooth;
         }
-
-        header {
-            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
-            color: #ffffff;
-            text-align: center;
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 40px 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 40px rgba(0, 150, 255, 0.15);
-            border: 1px solid #2a3f5a;
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #00d4ff, #7b2ffc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-            color: #8899aa;
-        }
-
-        header button {
-            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
-            color: #fff;
-            border: none;
-            padding: 8px 20px;
-            margin: 5px;
-            border-radius: 25px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
-        }
-
-        header button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 150, 255, 0.4);
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 20px auto;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        article {
-            background: linear-gradient(145deg, #1a2332, #0d1b2a);
-            border: 1px solid #2a3f5a;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
+        /* HEADER */
+        header {
+            background: #1a365d;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+        .logo i {
+            font-size: 28px;
+            color: #63b3ed;
+        }
+        .logo h1 {
+            font-size: 22px;
+        }
+        .logo span {
+            color: #63b3ed;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        nav ul li a:hover {
+            color: #63b3ed;
         }
 
-        article:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 35px rgba(0, 150, 255, 0.15);
-            border-color: #00d4ff;
-        }
-
-        article div:first-child {
-            flex: 1;
-        }
-
-        article div:first-child img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 2px solid #00d4ff;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        article h2 {
-            color: #00d4ff;
-            font-size: 1.6em;
-            margin: 10px 0 5px;
-            border-bottom: 2px solid #2a3f5a;
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-
-        article .artigo-autor {
-            color: #7b2ffc;
-            font-weight: bold;
-            font-style: italic;
-            margin: 5px 0 10px;
-        }
-
-        article p {
-            color: #b0c4d9;
-            margin: 10px 0;
-        }
-
-        .destaque-tec {
-            background: rgba(0, 212, 255, 0.08);
-            border-left: 3px solid #00d4ff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95em;
-        }
-
-        .tag-tec {
-            display: inline-block;
-            background: rgba(0, 212, 255, 0.12);
-            color: #00d4ff;
-            padding: 2px 12px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            margin-right: 5px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        article button {
-            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
-            color: #fff;
-            border: none;
-            padding: 6px 15px;
-            margin: 5px 5px 5px 0;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        article button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
-        }
-
-        article div:last-child {
-            flex-shrink: 0;
-        }
-
-        .imagem {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            border: 2px solid #2a3f5a;
-            object-fit: cover;
-            transition: all 0.3s ease;
-        }
-
-        .imagem:hover {
-            border-color: #00d4ff;
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
-        }
-
-        footer {
-            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
-            color: #8899aa;
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1582139329536-e7284fece509?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
             text-align: center;
-            padding: 25px;
-            max-width: 1000px;
-            margin: 30px auto;
-            border-radius: 15px;
-            border: 1px solid #2a3f5a
+            margin-top: 70px;
         }
+        .hero-content {
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background: #3182ce;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2b6cb0;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 36px;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        .section-header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #3182ce;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card i {
+            font-size: 48px;
+            color: #3182ce;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #1a365d;
+        }
+        .card p {
+            color: #4a5568;
+        }
+
+        /* SOLUÇÕES */
+        .solucoes {
+            background: #ebf8ff;
+        }
+        .solucoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .solucao-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #3182ce;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .solucao-icon i {
+            font-size: 40px;
+            color: #3182ce;
+            margin-bottom: 15px;
+        }
+        .solucao-item h3 {
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+        .solucao-item p {
+            color: #4a5568;
+        }
+        .solucao-item em {
+            color: #e53e3e;
+            font-style: italic;
+        }
+
+        /* TECNOLOGIA */
+        .tecnologia {
+            background: #1a365d;
+            color: white;
+        }
+        .tecnologia .section-header h2 {
+            color: white;
+        }
+        .tecnologia .section-header p {
+            color: #bee3f8;
+        }
+        .tecnologia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        .tecnologia-card {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .tecnologia-card:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.15);
+        }
+        .tecnologia-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #63b3ed;
+        }
+        .tecnologia-card h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .tecnologia-card p {
+            color: #bee3f8;
+            font-size: 14px;
+        }
+
+        /* DADOS */
+        .dados {
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: white;
+        }
+        .dados .section-header h2 {
+            color: white;
+        }
+        .dados .section-header p {
+            color: #bee3f8;
+        }
+        .indicadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        .indicador .numero {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #f6e05e;
+        }
+        .indicador p {
+            color: #bee3f8;
+            font-size: 14px;
+        }
+
+        /* QUIZ */
+        .quiz {
+            background: #f7fafc;
+        }
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .quiz-pergunta {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #1a365d;
+        }
+        .quiz-opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .quiz-opcoes button {
+            background: #edf2f7;
+            border: 2px solid #e2e8f0;
+            padding: 14px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-align: left;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        .quiz-opcoes button:hover:not(:disabled) {
+            background: #bee3f8;
+            border-color: #3182ce;
+            transform: translateX(5px);
+        }
+        .quiz-opcoes button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .btn-quiz {
+            background: #3182ce;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-quiz:hover {
+            background: #2b6cb0;
+        }
+        .quiz-feedback {
+            margin-top: 20px;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0d1b2a;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        .footer-logo i {
+            font-size: 36px;
+            color: #63b3ed;
+            margin-bottom: 15px;
+        }
+        .footer-logo h3 {
+            margin-bottom: 10px;
+        }
+        .footer-logo p {
+            color: #a0aec0;
+            font-size: 14px;
+        }
+        .footer-links h4 {
+            margin-bottom: 15px;
+            color: #63b3ed;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        .footer-links ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links ul li a:hover {
+            color: #63b3ed;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2d3748;
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h2 { font-size: 32px; }
+            .section-header h2 { font-size: 28px; }
+            .indicador .numero { font-size: 38px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-shield-halved"></i>
+            <h1>#Desconfie<span>AntesDeCompartilhar</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#desafios">O Problema</a></li>
+                <li><a href="#solucoes">Impactos na Saúde</a></li>
+                <li><a href="#tecnologia">A Tecnologia</a></li>
+                <li><a href="#dados">Dados</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2>Deepfakes podem prejudicar sua saúde?</h2>
+            <p>Vídeos falsos criados por inteligência artificial estão espalhando desinformação sobre medicamentos, vacinas e tratamentos. Entenda como isso afeta milhões de brasileiros.</p>
+            <a href="#desafios" class="btn">Entenda o perigo <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- O PROBLEMA -->
+<section id="desafios" class="desafios">
+    <div class="container">
+        <div class="section-header">
+            <h2>O que é um Deepfake?</h2>
+            <p>A tecnologia que está redefinindo o conceito de "verdade" no mundo digital</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>O que é?</h3>
+                <p>Técnica de inteligência artificial que cria vídeos, áudios ou imagens hiper-realistas de pessoas fazendo ou dizendo coisas que nunca aconteceram.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>Como funciona?</h3>
+                <p>Utiliza Redes Adversárias Generativas (GANs): duas IAs competem entre si — uma cria, a outra tenta detectar — até que a falsificação seja quase perfeita.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-md"></i>
+                <h3>O perigo para a saúde</h3>
+                <p>Quando um deepfake mostra um médico ou autoridade promovendo um "tratamento milagroso", pessoas podem abandonar remédios ou tomar decisões fatais.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-heart-circle-exclamation"></i>
+                <h3>Impacto psicológico</h3>
+                <p>Vítimas de deepfakes pornográficos sofrem com ansiedade, depressão e traumas. Em 2026, 98% das vítimas desse tipo de crime no Brasil são mulheres.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMPACTOS NA SAÚDE -->
+<section id="solucoes" class="solucoes">
+    <div class="container">
+        <div class="section-header">
+            <h2>Impactos na Saúde Pública</h2>
+            <p>Quando a desinformação vira questão de vida ou morte</p>
+        </div>
+        <div class="solucoes-grid">
+            <div class="solucao-item">
+                <div class="solucao-icon"><i class="fas fa-syringe"></i></div>
+                <h3>Queda na Vacinação</h3>
+                <p>Deepfakes de autoridades negando eficácia de vacinas contribuíram para a queda na cobertura vacinal no Brasil em 2025-2026, colocando doenças erradicadas de volta no mapa.</p>
+            </div>
+            <div class="solucao-item">
+                <div class="solucao-icon"><i class="fas fa-pills"></i></div>
+                <h3>Automedicação Perigosa</h3>
+                <p>Vídeos falsos promovendo "cura milagrosa" para doenças graves levaram milhares a abandonar tratamentos comprovados cientificamente.</p>
+            </div>
+            <div class="solucao-item">
+                <div class="solucao-icon"><i class="fas fa-head-side-virus"></i></div>
+                <h3>Ansiedade Coletiva</h3>
+                <p>Desinformação em massa gera pânico moral, estresse e adoecimento mental na população, sobrecarregando o sistema de saúde.</p>
+            </div>
+            <div class="solucao-item">
+                <div class="solucao-icon"><i class="fas fa-user-injured"></i></div>
+                <h3>Vítimas Invisíveis</h3>
+                <p>Pessoas que têm suas imagens usadas em deepfakes pornográficos sofrem traumas profundos. Uma professora na BA disse: <em>"Na hora que eu vi, faltou ar, faltou chão."</em></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECNOLOGIA -->
+<section id="tecnologia" class="tecnologia">
+    <div class="container">
+        <div class="section-header">
+            <h2>A Ciência por Trás do Engano</h2>
+            <p>Como a tecnologia é usada para criar e espalhar desinformação</p>
+        </div>
+        <div class="tecnologia-grid">
+            <div class="tecnologia-card">
+                <i class="fas fa-robot"></i>
+                <h4>Redes Neurais (GANs)</h4>
+                <p>Duas IAs competem: a Geradora cria imagens falsas; a Discriminadora tenta detectá-las. Com o tempo, o resultado é praticamente indistinguível do real.</p>
+            </div>
+            <div class="tecnologia-card">
+                <i class="fas fa-chart-simple"></i>
+                <h4>O Algoritmo e o Engajamento</h4>
+                <p>Plataformas priorizam conteúdos que geram raiva, medo ou surpresa. Deepfakes têm alta taxa de clique, então os algoritmos os impulsionam viralmente.</p>
+            </div>
+            <div class="tecnologia-card">
+                <i class="fas fa-database"></i>
+                <h4>Rastro Digital</h4>
+                <p>Curtidas, compartilhamentos e comentários formam seu rastro digital. Hackers e golpistas usam esses dados para criar deepfakes personalizados.</p>
+            </div>
+            <div class="tecnologia-card">
+                <i class="fas fa-file-shield"></i>
+                <h4>Casos Reais no Brasil</h4>
+                <p>Cantores usados para vender remédios falsos; Flávio Bolsonaro em vídeos de IA; Raquel Lyra teve deepfake pedindo doações; professora vítima de pornografia falsa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DADOS -->
+<section id="dados" class="dados">
+    <div class="container">
+        <div class="section-header">
+            <h2>Dados Alarmantes</h2>
+            <p>Números que mostram a dimensão do problema no Brasil</p>
+        </div>
+        <div class="indicadores">
+            <div class="indicador">
+                <div class="numero" data-valor="98">0</div>
+                <p>% das vítimas de deepfakes sexuais no Brasil são mulheres (Polícia Civil, 2026)</p>
+            </div>
+            <div class="indicador">
+                <div class="numero" data-valor="27000">0</div>
+                <p>Visualizações de um único deepfake pornográfico de uma professora na BA</p>
+            </div>
+            <div class="indicador">
+                <div class="numero" data-valor="40">0</div>
+                <p>% da população já viu um deepfake sem saber que era falso (DataSenado, 2026)</p>
+            </div>
+            <div class="indicador">
+                <div class="numero" data-valor="50">0</div>
+                <p>Pessoas denunciaram deepfakes sexuais só em Feira de Santana (BA) em 2026</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="quiz">
+    <div class="container">
+        <div class="section-header">
+            <h2>Quiz: Você sabe identificar um deepfake?</h2>
+            <p>Teste seus conhecimentos sobre desinformação e saúde digital</p>
+        </div>
+        <div class="quiz-container">
+            <div class="quiz-pergunta" id="pergunta"></div>
+            <div class="quiz-opcoes" id="opcoes"></div>
+            <div class="quiz-feedback" id="feedback"></div>
+            <button id="proximoBtn" class="btn-quiz" style="display:none;">Próxima →</button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-shield-halved"></i>
+                <h3>#DesconfieAntesDeCompartilhar</h3>
+                <p>Projeto N3 - Maratona Tech 2026 | Ciências Exatas e da Natureza</p>
+                <p style="font-size:0.8rem; margin-top:8px; color:#a0aec0;">Tema: Dilemas digitais — como agir com responsabilidade no mundo conectado?</p>
+            </div>
+            <div class="footer-links">
+                <h4>Referências</h4>
+                <ul>
+                    <li><a href="#">Ministério da Saúde</a></li>
+                    <li><a href="#">Polícia Federal - Deepfakes</a></li>
+                    <li><a href="#">Agência Lupa (Fact-checking)</a></li>
+                    <li><a href="#">Projeto Comprova</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 #DesconfieAntesDeCompartilhar - Trabalho acadêmico - MTech Fase 1</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ANIMAÇÃO DOS NÚMEROS
+    const numeros = document.querySelectorAll('.numero');
+
+    function animarNumeros() {
+        numeros.forEach(numero => {
+            const valorFinal = parseInt(numero.getAttribute('data-valor'));
+            let valorAtual = 0;
+            const incremento = valorFinal / 50;
+            const atualizarContagem = setInterval(() => {
+                valorAtual += incremento;
+                if (valorAtual >= valorFinal) {
+                    numero.innerText = valorFinal;
+                    clearInterval(atualizarContagem);
+                } else {
+                    numero.innerText = Math.floor(valorAtual);
+                }
+            }, 30);
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animarNumeros();
+                observer.disconnect();
+            }
+        });
+    });
+
+    if (document.querySelector('.dados')) {
+        observer.observe(document.querySelector('.dados'));
+    }
+
+    // QUIZ
+    const perguntas = [
+        {
+            pergunta: "O que é um deepfake?",
+            opcoes: [
+                "Um vídeo criado com IA que mostra algo que não aconteceu",
+                "Um filtro para deixar fotos mais bonitas",
+                "Um programa para editar textos",
+                "Um tipo de vírus de computador"
+            ],
+            correta: 0
+        },
+        {
+            pergunta: "Qual tecnologia é usada para criar deepfakes?",
+            opcoes: [
+                "Redes Neurais (GANs)",
+                "Microsoft Word",
+                "Excel",
+                "Calculadora"
+            ],
+            correta: 0
+        },
+        {
+            pergunta: "Qual é um sinal de alerta para identificar um deepfake?",
+            opcoes: [
+                "Vídeo em alta definição",
+                "Lábios não sincronizam com o áudio",
+                "O vídeo é curto",
+                "O vídeo tem legendas"
+            ],
+            correta: 1
+        },
+        {
+            pergunta: "Quem são as principais vítimas de deepfakes pornográficos no Brasil?",
+            opcoes: [
+                "Homens",
+                "Mulheres (98% dos casos)",
+                "Crianças",
+                "Idosos"
+            ],
+            correta: 1
+        },
+        {
+            pergunta: "Qual a melhor atitude ao receber um vídeo suspeito?",
+            opcoes: [
+                "Compartilhar imediatamente",
+                "Verificar a fonte e buscar confirmação",
+                "Ignorar e continuar rolando",
+                "Salvar para ver depois"
+            ],
+            correta: 1
+        }
+    ];
+
+    let perguntaAtual = 0;
+    let pontuacao = 0;
+
+    function carregarPergunta() {
+        const perguntaEl = document.getElementById('pergunta');
+        const opcoesEl = document.getElementById('opcoes');
+        const feedbackEl = document.getElementById('feedback');
+        const proximoBtn = document.getElementById('proximoBtn');
+
+        feedbackEl.innerHTML = '';
+        feedbackEl.style.color = '';
+        proximoBtn.style.display = 'none';
+
+        if (perguntaAtual < perguntas.length) {
+            const q = perguntas[perguntaAtual];
+            perguntaEl.innerHTML = (perguntaAtual + 1) + '. ' + q.pergunta;
+
+            opcoesEl.innerHTML = '';
+            q.opcoes.forEach((opcao, idx) => {
+                const btn = document.createElement('button');
+                btn.innerHTML = opcao;
+                btn.onclick = function() { verificarResposta(idx, q.correta); };
+                opcoesEl.appendChild(btn);
+            });
+        } else {
+            finalizarQuiz();
+        }
+    }
+
+    function verificarResposta(selecionada, correta) {
+        const feedbackEl = document.getElementById('feedback');
+        const botoes = document.querySelectorAll('.quiz-opcoes button');
+
+        botoes.forEach(function(btn) { btn.disabled = true; });
+
+        if (selecionada === correta) {
+            feedbackEl.innerHTML = '✅ Correta! Muito bem!';
+            feedbackEl.style.color = '#38a169';
+            pontuacao++;
+        } else {
+            feedbackEl.innerHTML = '❌ Incorreta! A resposta certa é: ' + perguntas[perguntaAtual].opcoes[correta];
+            feedbackEl.style.color = '#e53e3e';
+        }
+
+        document.getElementById('proximoBtn').style.display = 'inline-block';
+        perguntaAtual++;
+    }
+
+    function finalizarQuiz() {
+        const perguntaEl = document.getElementById('pergunta');
+        const opcoesEl = document.getElementById('opcoes');
+        const feedbackEl = document.getElementById('feedback');
+        const proximoBtn = document.getElementById('proximoBtn');
+
+        perguntaEl.innerHTML = '🎉 Quiz finalizado! Você acertou ' + pontuacao + ' de ' + perguntas.length + '!';
+        opcoesEl.innerHTML = '';
+        feedbackEl.innerHTML = (pontuacao >= 4) ? 'Parabéns! Você é um especialista! 🏆' : 'Continue aprendendo! 📚';
+        feedbackEl.style.color = (pontuacao >= 4) ? '#38a169' : '#dd6b20';
+        proximoBtn.style.display = 'none';
+    }
+
+    document.getElementById('proximoBtn').addEventListener('click', function() {
+        carregarPergunta();
+    });
+
+    carregarPergunta();
+</script>
+
+</body>
+</html>
